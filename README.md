@@ -1,5 +1,44 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## structure
+```
+
+/my-nextjs-app
+├── public/                     # Static assets (images, fonts, icons)
+├── src/
+│   ├── components/             # Reusable UI components
+│   │   ├── Button/
+│   │   │   ├── Button.tsx
+│   │   │   └── Button.module.css
+│   │   └── ...
+│   ├── features/               # Feature-based modules (following SOLID, SRP)
+│   │   ├── user/
+│   │   │   ├── components/     # User-specific components
+│   │   │   ├── hooks/          # Custom hooks for user
+│   │   │   ├── services/       # API calls, business logic
+│   │   │   ├── user.slice.ts   # State management slice (if using Redux)
+│   │   │   └── index.ts        # Public API for this feature
+│   │   └── ...
+│   ├── hooks/                  # Global hooks (useAuth, useFetch, etc.)
+│   ├── lib/                    # Utils, helpers, API clients
+│   ├── pages/                  # Next.js pages (can be organized inside features as well)
+│   │   ├── api/                # API routes
+│   │   ├── _app.tsx            # Root app wrapper
+│   │   ├── index.tsx
+│   │   └── ...
+│   ├── styles/                 # Global styles (CSS, SCSS, Tailwind config)
+│   ├── context/                # React Context providers
+│   └── types/                  # TypeScript types and interfaces
+├── .eslintrc.js                # ESLint config
+├── .prettierrc                 # Prettier config
+├── next.config.js              # Next.js config
+├── tsconfig.json               # TypeScript config
+├── package.json
+└── README.md
+
+
+```
+
 ## Getting Started
 
 First, run the development server:
